@@ -1,0 +1,20 @@
+---
+- name: Add disks to virtual machine using UUID
+  community.vmware.vmware_guest_disk:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    datacenter: "{{ datacenter_name }}"
+    uuid: "{{ vm_name }}"
+    disk:
+      - size_mb: 10
+        type: thin
+        datastore: datacluster0
+        state: present
+        scsi_controller: 1
+        unit_number: 1
+        scsi_type: 'paravirtual'
+        disk_mode: 'persistent'
+  delegate_to: localhost
+  register: disk_facts
+  when: not disk_exist

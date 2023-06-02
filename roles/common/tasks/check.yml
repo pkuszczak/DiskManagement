@@ -1,0 +1,8 @@
+---
+- name: check if disk exist
+  hosts: {{ vcenter_datastore }}
+  tasks:
+    - name: Find VMDK
+      stat:
+        path: path/ {{ disk_name }}
+      register: disk_exist
