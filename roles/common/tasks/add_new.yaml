@@ -11,7 +11,7 @@
         type: thin
         datastore: datacluster0
         state: present
-        scsi_controller: 1
+        scsi_controller: 2
         unit_number: 1
         scsi_type: 'paravirtual'
         disk_mode: 'persistent'

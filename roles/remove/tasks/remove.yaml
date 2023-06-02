@@ -1,13 +1,14 @@
-- name: Remove disk from virtual machine but keep the VMDK file on the datastore
+---
+- name: Remove disk from virtual machine
   community.vmware.vmware_guest_disk:
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
     datacenter: "{{ datacenter_name }}"
-    name: 
+    name: {{ vm_name }}
     disk:
       - state: absent
-        scsi_controller: 1
+        scsi_controller: 2
         unit_number: 2
         destroy: false
   delegate_to: localhost
