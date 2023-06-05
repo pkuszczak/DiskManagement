@@ -1,3 +1,2 @@
 ---
-- include:
-  - remove.yaml
+- include: remove.yaml

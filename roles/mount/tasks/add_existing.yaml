@@ -15,7 +15,7 @@
         scsi_type: 'buslogic'
         unit_number: 1
         disk_mode: 'independent_nonpersistent'
-      - filename: "{{ vcenter.datastore }} {{ path }}/disk.vmdk"
+      - filename: "{{ vcenter.datastore }}{{ path }}/disk.vmdk"
   delegate_to: localhost
   register: disk_facts
   when: disk_exist

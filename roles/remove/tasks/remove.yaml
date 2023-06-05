@@ -5,7 +5,7 @@
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
     datacenter: "{{ datacenter_name }}"
-    name: {{ vm_name }}
+    name: "{{ vm_name }}"
     disk:
       - state: absent
         scsi_controller: 2

@@ -1,5 +1,0 @@
----
-- include:
-  - check.yml
-  - add_existing.yml
-  - add_new.yml
