@@ -1,4 +1,5 @@
 ---
-- include: check.yml
-- include: add_existing.yml
-- include: add_new.yml
+# - include: check.yml
+- include_vars: vars.yaml
+# - include: ./roles/mount/tasks/add_existing.yaml
+- include: ./roles/mount/tasks/add_new.yaml

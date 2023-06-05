@@ -1,11 +1,11 @@
 ---
-- name: Add disks to virtual machine using UUID
+- name: Add existing disk
   community.vmware.vmware_guest_disk:
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
     datacenter: "{{ datacenter_name }}"
-    uuid: "{{ vm_name }}"
+    uuid: 61b08732-f6a18c28-79c0-1866da9a117b
     disk:
       - size: 10Gb
         type: eagerzeroedthick
@@ -15,7 +15,7 @@
         scsi_type: 'buslogic'
         unit_number: 1
         disk_mode: 'independent_nonpersistent'
-      - filename: "{{ vcenter.datastore }}{{ path }}/disk.vmdk"
-  delegate_to: localhost
-  register: disk_facts
-  when: disk_exist
+      - filename: "[datastore1] path/to/existing/disk.vmdk"
+    delegate_to: localhost
+    register: disk_facts
+  # # when: disk_exist

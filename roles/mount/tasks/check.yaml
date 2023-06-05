@@ -1,6 +1,6 @@
 ---
 - name: check if disk exist
-  hosts:" {{ vcenter_datastore }}"
+  hosts: "{{ vcenter_datastore }}"
   tasks:
     - name: Find VMDK
       stat:
