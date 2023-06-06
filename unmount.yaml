@@ -4,8 +4,5 @@
   collections:
   - community.vmware.vmware_guest
 
-  tasks:
-    - include_vars: vars.yaml
-
   roles:
   - unmount

@@ -5,10 +5,13 @@
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
     datacenter: "{{ datacenter_name }}"
+    validate_certs: False
     name: "{{ vm_name }}"
     disk:
       - state: absent
         scsi_controller: 2
+        scsi_type: 'paravirtual'
+        disk_mode: 'persistent'
         unit_number: 2
         destroy: false
   delegate_to: localhost

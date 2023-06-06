@@ -4,19 +4,15 @@
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
-    datacenter: LP-LAB-01 
-    # uuid: 61b08732-f6a18c28-79c0-1866da9a117b
+    datacenter: "{{ datacenter_name }}"
     validate_certs: False
     name: "{{ vm_name }}"
     disk:
       - size_gb: 10
         type: thin
-        datastore: LP_VMW-FC-01 
+        datastore: "{{ datastore_name }}"
         state: present
         scsi_controller: 2
-        unit_number: 1
+        unit_number: 2
         scsi_type: 'paravirtual'
         disk_mode: 'persistent'
-  # delegate_to: localhost
-  # register: disk_facts
-#   # when: not disk_exist
