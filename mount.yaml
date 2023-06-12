@@ -5,4 +5,5 @@
   - community.vmware.vmware_guest
 
   roles:
+  - debug
   - mount
