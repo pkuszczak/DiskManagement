@@ -1,12 +1,12 @@
 ---
 - name: Check if disk exist
   community.vmware.vsphere_file:
-    host: "{{ /#vcenter_hostname }}"
-    username: "{{ /#vcenter_username }}"
-    password: "{{ /#vcenter_password }}"
-    datacenter: "{{ /#datacenter_name }}"
-    datastore: "{{ /#datastore_name }}"
-    path: "{{ /#path }}/{{ /#disk_name }}"
+    host: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    datacenter: "{{ datacenter_name }}"
+    datastore: "{{ datastore_name }}"
+    path: "{{ path }}/{{ disk_name }}"
     state: file
     validate_certs: false
   ignore_errors: true
