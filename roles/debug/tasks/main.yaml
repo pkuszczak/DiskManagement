@@ -2,9 +2,10 @@
   ansible.builtin.debug:
     msg:
     - "vcenter_hostname: '{{ vcenter_hostname }}'"
+    - "vcenter_username: '{{ vcenter_username }}'"
+    - "datastore_name: '{{ datastore_name }}'"
+    - "datacenter_name: '{{ datacenter_name }}'"
+    - "vm_name: '{{ vm_name }}'"
+    - "disk_name: '{{ disk_name }}'"
+    - "path: '{{ path }}'"
 
-- name: Prints dialog variables
-  ansible.builtin.debug:
-    msg:
-    - "dialog_param_vcenter_hostname: '{{ dialog_param_vcenter_hostname }}'"
-  ignore_errors: true
