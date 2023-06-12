@@ -1,14 +1,14 @@
 ---
 - name: Add existing disk
   community.vmware.vmware_guest_disk:
-    hostname: "{{ dialog_param_vcenter_hostname }}"
-    username: "{{ dialog_param_vcenter_username }}"
-    password: "{{ dialog_param_vcenter_password }}"
-    datacenter: "{{ dialog_param_datacenter_name }}"
-    name: "{{ dialog_param_vm_name }}"
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    datacenter: "{{ datacenter_name }}"
+    name: "{{ vm_name }}"
     validate_certs: False
     disk:
-       - filename: "[{{ dialog_param_datastore_name }}] {{ dialog_param_path }}/{{ dialog_param_disk_name }}"
+       - filename: "[{{ datastore_name }}] {{ path }}/{{ disk_name }}"
          unit_number: 2
          state: present
          scsi_controller: 2
