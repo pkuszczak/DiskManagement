@@ -1,16 +1,16 @@
 ---
 - name: Add new disk 
   community.vmware.vmware_guest_disk:
-    hostname: "{{ vcenter_hostname }}"
-    username: "{{ vcenter_username }}"
-    password: "{{ vcenter_password }}"
-    datacenter: "{{ datacenter_name }}"
+    hostname: "{{ dialog_param_vcenter_hostname }}"
+    username: "{{ dialog_param_vcenter_username }}"
+    password: "{{ dialog_param_vcenter_password }}"
+    datacenter: "{{ dialog_param_datacenter_name }}"
     validate_certs: False
-    name: "{{ vm_name }}"
+    name: "{{ dialog_param_vm_name }}"
     disk:
       - size_gb: 10
         type: thin
-        datastore: "{{ datastore_name }}"
+        datastore: "{{ dialog_param_datastore_name }}"
         state: present
         scsi_controller: 2
         unit_number: 2
