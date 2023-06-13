@@ -4,6 +4,9 @@
   collections:
   - community.vmware.vmware_guest
 
+  vars:
+    ansible_python_interpreter: /usr/bin/python3.9
+
   roles:
   - debug
   - mount
