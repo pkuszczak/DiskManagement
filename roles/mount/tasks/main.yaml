@@ -1,8 +1,8 @@
 ---
 # - include_vars: vars.yaml
 
-- include: check.yaml
+# - include: check.yaml
 - include: ./roles/mount/tasks/add_existing.yaml
-  when: disk_exist == true
-- include: ./roles/mount/tasks/add_new.yaml
-  when: disk_exist == false
+  # when: disk_exist == true
+# - include: ./roles/mount/tasks/add_new.yaml
+  # when: disk_exist == false
